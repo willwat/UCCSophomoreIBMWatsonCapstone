@@ -1,0 +1,13 @@
+Capstone Stuff:
+
+-Diagrams : Liam
+
+-Login Page : Liam
+
+-Users Database : Me
+
+-Help File : Me
+
+-Figure out where it will be hosted : Kellam
+
+-Make Admin Only Section : Liam
