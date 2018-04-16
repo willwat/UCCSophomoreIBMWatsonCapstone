@@ -33,7 +33,6 @@ class ImageDownloader
         $end_object = strpos($result, '</div>', $start_object + 1);
         //find where the object ends, right before div
         $object_raw = substr($result, $start_object, $end_object-$start_object);
-        echo $object_raw;
         //get the whole substring of the json data
         $decoded_object = (array)json_decode($object_raw);
         //convert json data to an array
@@ -81,7 +80,7 @@ class ImageDownloader
         return curl_exec($ch);
     }
     private function get_google_response($search){
-        $url = 'https://www.google.com/search?as_st=y&tbm=isch&as_epq=&as_oq=&as_eq=&cr=&as_sitesearch=&safe=images&tbs=isz:lt,islt:svga,itp:photo,ift:jpg&as_q=' . $search;
+        $url = 'https://www.google.com/search?as_st=y&tbm=isch&as_epq=&as_oq=&as_eq=&cr=&as_sitesearch=&safe=images&tbs=isz:m,islt:svga,itp:photo,ift:jpg&as_q=' . urlencode($search);
         return $this->curl($url);
     }
     //download the image at the source link specified from the json object
