@@ -3,20 +3,15 @@ ini_set('max_execution_time', 300); //300 seconds = 5 minutes
 require('classes/IBMWatsonFunctionality.php');
 require('templates/header.html');
 ?>
-    <!--
-    <script>
-        var watsonIsTraining = "<?php //echo json_encode(IBMWatsonFunctionality::isWatsonTraining()) ?>";
-
-        if(watsonIsTraining == 'true'){
-            window.location = 'LoadingScreen.php';
-        }
-    </script>
-    -->
-
-	<form method="post">
-		Input Phrase: <input type="text" name="phrase"><br>
-		<input type="submit" value="Teach AI">
-	</form>
+<?php
+	//If user is an admin logged in then allow them to teach the AI
+	if(isset($_SESSION['username'])){
+	print'<form method="post">
+			Input Phrase: <input type="text" name="phrase"><br>
+			<input type="submit" value="Teach AI">
+		</form>';
+	}
+?>
 	<br>
 	<form method="post">
 		Image from:
