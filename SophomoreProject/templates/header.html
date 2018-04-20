@@ -6,8 +6,25 @@
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
+<?php
+	//Start the session
+	session_start();
+?>
 <body>
 	<header>
-		<h1>Watson AI</h1>
+		<?php
+			print '<div style="float:right;"><h3 style="text-align:left;padding:15px;color:#ffffff">';
+			//If admin logged in then display greeting and logout link
+			if(isset($_SESSION['username'])){
+				print 'Hello '.$_SESSION['username'];
+				print '<br><a href="logout.php">Log out</a>';
+			}
+			print '</h3></div>';
+		?>
+		<h1>Watson AI</h1><br>
 	</header>
+	<nav>
+		<a href="index.php">Home</a>
+		<a href="about.php">About</a>
+	</nav>
 	<main>
