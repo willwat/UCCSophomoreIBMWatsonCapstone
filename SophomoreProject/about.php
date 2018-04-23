@@ -14,12 +14,13 @@ require('templates/header.html');
 
 <h3>Steps Taken to Use IBM Watson Visual Recognition </h3>
 <p>
-	<ol>
+	<ol class="text-left" style="display:inline-block;vertical-align:middle;">
 		<li>Setup an instance of IBM Watson Visual Recognition</li>
 		<li>Find sample CLI curl commands to get a feel for using IBM Watson</li>
 		<li>Research curl commands for your chosen programming language</li>
 		<li>Practice using the commands with your programming language</li>
 		<li>Create functions parameterizing the commands</li>
+		<li>At this point you can automate IBM Watson functionality with your functions</li>
 	</ol>
 </p>
 
