@@ -12,7 +12,7 @@ class IBMWatsonFunctionality
 	//POST Variables IBM Watson always needs.
     private static $urlClassifiersBase = "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/classifiers?";
     private static $urlClassifyBase = "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/classify?";
-    private static $apiKey = "6ef1a6180f7dca04b4209c6134811502580db47c";
+    private static $apiKey = "INSERT API KEY HERE";
     private static $threshold = "0";
     private static $version = "2016-05-20";
     private static $trainingFolderFullPath = "trainingFolders";

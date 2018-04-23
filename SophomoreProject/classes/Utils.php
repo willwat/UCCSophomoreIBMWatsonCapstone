@@ -6,6 +6,21 @@
 
 class Utils
 {
+    //Function used for authenticating users, returns a result set of users with that criteria which can evaluate to true, returns false if the user and password don't match	
+    static function authenticateUser($username, $password){
+		$userDatabase = new \PDO(
+			'mysql:host='. getenv('MYSQL_HOST'). ';dbname='. getenv('MYSQL_DATABASE'),
+			 getenv('MYSQL_USER'),
+			 getenv('MYSQL_PASSWORD')
+			);
+		
+		$stmt = $userDatabase->prepare("SELECT * FROM tUser WHERE username = ? and password = ?");
+		$stmt->execute(array($username, hash('sha256', $password)));
+		$user = $stmt->fetch();
+
+		return $user;
+    }
+	
     //Debugging function that prints information on a variable to the browsers console.
     static function console_log($data){
         echo '<script>';
